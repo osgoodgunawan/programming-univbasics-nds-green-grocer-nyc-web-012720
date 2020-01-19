@@ -80,6 +80,9 @@ def checkout(cart, coupons)
   
   counter+=1
   end
-
+  if sum_of_cart > 100
+    sum_of_cart=sum_of_cart*.1
+  end
+sum_of_cart
   
 end
