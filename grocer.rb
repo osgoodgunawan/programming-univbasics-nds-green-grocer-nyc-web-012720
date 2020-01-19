@@ -1,26 +1,53 @@
 def find_item_by_name_in_collection(name, collection)
-  # Implement me first!
-  #
-  # Consult README for inputs and outputs
-end
+count=0
+  while count < collection.size do 
+    if collection[count][:item] === name
+      return collection[count]
+    end
+    count+=1
+  end
+   nil
+ end
 
 def consolidate_cart(cart)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This returns a new Array that represents the cart. Don't merely
-  # change `cart` (i.e. mutate) it. It's easier to return a new thing.
+  array=[]
+  count=0
+  while count<cart.length do 
+    #new_cart_array=[:count]
+    new_cart_array=find_item_by_name_in_collection(cart[count][:item],array)
+    if new_cart_array
+      new_cart_array[:count]+=1
+    else
+      new_cart_array=cart[count]
+      # add :count and set equal to 1 in cart array
+      new_cart_array[:count]=1
+      # add it to the new array from new_cart_array(old array)
+      array.push(new_cart_array)
+  end
+  count+=1
+end
+array
 end
 
 def apply_coupons(cart, coupons)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
+  counter =0
+  while counter<coupons.size do 
+    cart_item=find_item_by_name_in_collection(coupons[counter][:item],cart)
+  
+  end
+
 end
 
 def apply_clearance(cart)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
+  count=0
+  while count<cart.size do 
+    if cart[count][:clearance] === true
+      cart[count][:price]*=0.8
+      cart[count][:price].round(2)
+    end
+    count +=1
+end
+cart
 end
 
 def checkout(cart, coupons)
