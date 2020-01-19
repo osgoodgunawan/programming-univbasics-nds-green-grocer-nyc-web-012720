@@ -70,6 +70,16 @@ end
 
 def checkout(cart, coupons)
   consolidate_cart=consolidate_cart(cart)
-  total_coupons=apply_coupons(,coupons)
+  total_coupons=apply_coupons(consolidate_cart,coupons)
+  final_clearance=apply_clearance(total_coupons)
+  
+  sum_of_cart=0
+  counter=0
+  while counter<final_clearance.length do 
+  sum_of_cart=final_clearance[counter][:price]*final_clearance[counter][count]
+  
+  counter+=1
+  end
+
   
 end
