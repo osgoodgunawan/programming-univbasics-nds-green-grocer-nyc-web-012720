@@ -35,7 +35,9 @@ def apply_coupons(cart, coupons)
     cart_item=find_item_by_name_in_collection(coupons[counter][:item],cart)
    coupon_name="#{coupons[counter][:item]} W/COUPON"
    cart_item_with_coupon=find_item_by_name_in_collection(coupon_name,cart)
+   if
    
+  end
   
   end
 
